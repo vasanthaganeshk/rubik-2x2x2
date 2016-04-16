@@ -43,15 +43,17 @@ def shortest_path(start, end):
         for x in xrange(6):
             temp = rubik.perm_apply(rubik.quarter_twists[x], u)
             if temp not in parent:
-                parent[temp] = (u, x)
+                parent[temp] = x + 1 if x%2 == 0 else x - 1
                 frontier.append(temp)
 
     ans = deque()
     if ans_found:
         m = end
+        j = parent[m]
         while parent[m] != None:
-            ans.appendleft(rubik.quarter_twists[parent[m][1]])
-            m = parent[m][0]
+            ans.appendleft(rubik.quarter_twists[j + 1 if j%2 == 0 else j - 1])
+            m = rubik.perm_apply(rubik.quarter_twists[j], m)
+            j = parent[m]
         return list(ans)
     else:
         return None
