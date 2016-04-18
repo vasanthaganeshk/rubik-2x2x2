@@ -57,4 +57,3 @@ def shortest_path(start, end):
         return list(ans)
     else:
         return None
-
