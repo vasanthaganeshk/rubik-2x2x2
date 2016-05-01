@@ -24,12 +24,12 @@ from collections import deque
 def shortest_path(start, end):
     """
     Using 2-way BFS, finds the shortest path from start_position to
-    end_position. Returns a list of moves. 
+    end_position. Returns a list of moves.
 
     You can use the rubik.quarter_twists move set.
     Each move can be applied using rubik.perm_apply
     """
-    
+
     frontier = deque()
     frontier.append(start)
     parent = {start: None}
@@ -42,6 +42,7 @@ def shortest_path(start, end):
             break
         for x in xrange(6):
             temp = rubik.perm_apply(rubik.quarter_twists[x], u)
+
             if temp not in parent:
                 parent[temp] = x + 1 if x%2 == 0 else x - 1
                 frontier.append(temp)
@@ -52,6 +53,7 @@ def shortest_path(start, end):
         j = parent[m]
         while parent[m] != None:
             ans.appendleft(rubik.quarter_twists[j + 1 if j%2 == 0 else j - 1])
+            print(rubik.quarter_twists_names[ans[0]])
             m = rubik.perm_apply(rubik.quarter_twists[j], m)
             j = parent[m]
         return list(ans)
