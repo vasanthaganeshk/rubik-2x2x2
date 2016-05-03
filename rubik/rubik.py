@@ -125,7 +125,7 @@ def perm_to_string(p):
 ### Make standard permutations of faces
 ###################################################
 # Identity: equal to (0, 1, 2, ..., 23).
-I = (flu, luf, ufl, fur, urf, rfu, fdl, dlf, lfd, frd, rdf, dfr, 
+I = (flu, luf, ufl, fur, urf, rfu, fdl, dlf, lfd, frd, rdf, dfr,
      bul, ulb, lbu, bru, rub, ubr, bld, ldb, dbl, bdr, drb, rbd)
 
 """
@@ -135,7 +135,7 @@ three faces on a cubie naturally stay together:
 """
 
 # Front face rotated clockwise.
-F = (fdl, dlf, lfd, flu, luf, ufl, frd, rdf, dfr, fur, urf, rfu, 
+F = (fdl, dlf, lfd, flu, luf, ufl, frd, rdf, dfr, fur, urf, rfu,
      bul, ulb, lbu, bru, rub, ubr, bld, ldb, dbl, bdr, drb, rbd)
 # Front face rotated counter-clockwise.
 Fi = perm_inverse(F)
@@ -180,45 +180,45 @@ def input_configuration():
     this cubie #0. Starting with its front face, and going clockwise,
     input the colors of the faces (e.g. yob, if the colors are yellow,
     orange, and blue):
-    cubie #0: """)
+    cubie #0(FLU): """)
     position[0] = eval(cubie)
     position[1] = eval(cubie[1:] + cubie[0])
     position[2] = eval(cubie[2] + cubie[:2])
     cubie = raw_input("""
     Now enter cubie #1, which is to the right of cubie #0, again
     starting with the front face and going clockwise:
-    cubie #1: """)
+    cubie #1(FUR): """)
     position[3] = eval(cubie)
     position[4] = eval(cubie[1:] + cubie[0])
     position[5] = eval(cubie[2] + cubie[:2])
     cubie = raw_input("""
     Now enter cubie #2, which is beneath cubie #0:
-    cubie #2: """)
+    cubie #2(FDL): """)
     position[6] = eval(cubie)
     position[7] = eval(cubie[1:] + cubie[0])
     position[8] = eval(cubie[2] + cubie[:2])
     cubie = raw_input("""
     Now enter cubie #3, to the right of cubie #2:
-    cubie #3: """)
+    cubie #3(FRD): """)
     position[9] = eval(cubie)
     position[10] = eval(cubie[1:] + cubie[0])
     position[11] = eval(cubie[2] + cubie[:2])
     cubie = raw_input("""
     Now enter cubie #4, which is behind cubie #0. Start with the back
     face, and go clockwise:
-    cubie #4: """)
+    cubie #4(BUL): """)
     position[12] = eval(cubie)
     position[13] = eval(cubie[1:] + cubie[0])
     position[14] = eval(cubie[2] + cubie[:2])
     cubie = raw_input("""
     Now enter cubie #5, which is to the right of cubie #4:
-    cubie #5: """)
+    cubie #5(BRU): """)
     position[15] = eval(cubie)
     position[16] = eval(cubie[1:] + cubie[0])
     position[17] = eval(cubie[2] + cubie[:2])
     cubie = raw_input("""
     Now enter cubie #6, which is beneath cubie #4:
-    cubie #6: """)
+    cubie #6(BLD): """)
     position[18] = eval(cubie)
     position[19] = eval(cubie[1:] + cubie[0])
     position[20] = eval(cubie[2] + cubie[:2])
